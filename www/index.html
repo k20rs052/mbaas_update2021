@@ -72,7 +72,21 @@
     }
 
     function countData() {
-      $("#display").html("count does not work");
+     // $("#display").html("count does not work");
+     UTdata.count().fetchAll()
+        .then(function(results) {
+          
+          $("#display").removeClass();
+          $("#display").addClass("text-light");
+          $("#display").addClass("bg-primary");
+          $("#display").html(results.count);
+        })
+        .catch(function(error) {
+          $("#display").removeClass();
+          $("#display").addClass("bg-warning");
+          $("#display").html("delete fail:" + JSON.stringify(error));
+        })
+     
     }
 
     function deleteData() {
@@ -129,12 +143,12 @@
   <div>
     <a onclick="fetchAll()" class="btn btn-outline-secondary" role="buton">Fetch All</a>
     <a onclick="sortData()" class="btn btn-outline-secondary" role="button">Sort</a>
-    <a onclick="countData()" class="btn btn-outline-primary" role="button">Count</a>
+    <a onclick="countData()" class="btn btn-outline-secondary" role="button">Count</a>
     <a onclick="deleteData()" class="btn btn-outline-secondary" role="buton">Delete</a>
   </div>
   <div>
     <input type="text" id="update" placeholder="更新">
-    <a onclick="updateData()" class="btn btn-outline-primary" role="button">Update</a>
+    <a onclick="updateData()" class="btn btn-outline-secondary" role="button">Update</a>
   </div>
   <div id="display" class="text-light bg-info">
     Results
