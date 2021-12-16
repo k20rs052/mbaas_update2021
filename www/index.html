@@ -15,6 +15,7 @@
     let key = "score";
 
     function enterData() {
+      
       let uTdata = new UTdata();
       let value = parseInt($("#data").val());
       uTdata.set(key, value)
@@ -29,6 +30,7 @@
           $("#display").addClass("bg-warning");
           $("#display").html("enter fail");
         })
+        
     }
 
     function fetchAll() {
@@ -50,7 +52,9 @@
         })
     }
 
-    function sortData() {
+    
+
+    /*function sortData() {
       //$("#display").html("sort does not work");
 
        UTdata.order("score", false).fetchAll()
@@ -70,8 +74,9 @@
           $("#display").html("delete fail:" + JSON.stringify(error));
         })
     }
+    */
 
-    function countData() {
+    /*function countData() {
      // $("#display").html("count does not work");
      UTdata.count().fetchAll()
         .then(function(results) {
@@ -88,8 +93,9 @@
         })
      
     }
+    */
 
-    function deleteData() {
+    /*function deleteData() {
       //$("#display").html("delete does not work");
        UTdata.fetch()
         .then(function(results) {
@@ -108,8 +114,9 @@
         })
       
     }
+    */
 
-    function updateData() {
+    /*function updateData() {
       //$("#display").html("update does not work");
 
       UTdata.fetch()
@@ -131,24 +138,26 @@
           $("#display").html("delete fail:" + JSON.stringify(error));
         })
     }
+    */
   </script>
 </head>
 
 <body>
-  <h1 class="text-light bg-secondary">mbaas update</h1>
+  <h1 class="text-light bg-secondary">Soccer team score</h1>
   <div>
-    <input type="text" id="data" placeholder="スコア">
+    <input type="text" id="data1" placeholder="スコア1">
+    
+    <input type="text" id="data2" placeholder="スコア2">
+    <div></div>
     <a onclick="enterData()" class="btn btn-outline-secondary" role="button">Enter</a>
   </div>
   <div>
     <a onclick="fetchAll()" class="btn btn-outline-secondary" role="buton">Fetch All</a>
-    <a onclick="sortData()" class="btn btn-outline-secondary" role="button">Sort</a>
-    <a onclick="countData()" class="btn btn-outline-secondary" role="button">Count</a>
-    <a onclick="deleteData()" class="btn btn-outline-secondary" role="buton">Delete</a>
+    
   </div>
   <div>
-    <input type="text" id="update" placeholder="更新">
-    <a onclick="updateData()" class="btn btn-outline-secondary" role="button">Update</a>
+    
+    
   </div>
   <div id="display" class="text-light bg-info">
     Results
