@@ -16,7 +16,12 @@
 
     function enterData() {
       
-      let uTdata = new UTdata();
+      if(data1 > data2){
+        
+        
+      }
+
+      /*let uTdata = new UTdata();
       let value = parseInt($("#data").val());
       uTdata.set(key, value)
         .save()
@@ -30,10 +35,11 @@
           $("#display").addClass("bg-warning");
           $("#display").html("enter fail");
         })
+        */
         
     }
 
-    function fetchAll() {
+    /*function fetchAll() {
       UTdata.fetchAll()
         .then(function(results) {
           let msg = "";
@@ -51,6 +57,7 @@
           $("#display").html("delete fail:" + JSON.stringify(error));
         })
     }
+    */
 
     
 
